@@ -1,0 +1,10 @@
+{
+  "name": "Aditya Sharma — Frontend & MERN Stack Developer",
+  "short_name": "Aditya Sharma",
+  "description": "Frontend & MERN Stack Developer focused on building scalable, responsive and user-focused web applications with React, Next.js and modern JavaScript.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070A0F",
+  "theme_color": "#070A0F",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

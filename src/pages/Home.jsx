@@ -6,6 +6,7 @@ import Experience from '../components/sections/Experience';
 import Education from '../components/sections/Education';
 import Journey from '../components/sections/Journey';
 import Contact from '../components/sections/Contact';
+import Certifications from '../components/sections/Certifications';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Projects />
       <Experience />
       <Education />
+      <Certifications/>
       <Journey />
       <Contact />
     </>

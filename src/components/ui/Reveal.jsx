@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { cn } from '../../utils/cn';
+// import { cn } from '../../utils/cn';
 
 // Scroll-reveal wrapper. Fades + slides children into view once.
 export default function Reveal({

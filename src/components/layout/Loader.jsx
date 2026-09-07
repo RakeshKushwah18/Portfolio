@@ -15,7 +15,7 @@ export default function Loader() {
         transition={{ duration: 0.4 }}
         className="flex flex-col items-center gap-4"
       >
-        <span className="font-mono text-2xl font-bold text-gradient-accent">AS</span>
+        <span className="font-mono text-2xl font-bold text-gradient-accent">RK</span>
         <div className="h-0.5 w-16 overflow-hidden rounded-full bg-cloud-200/10">
           <motion.div
             initial={{ x: '-100%' }}

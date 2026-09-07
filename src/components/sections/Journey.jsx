@@ -13,7 +13,7 @@ export default function Journey() {
           <h2 className="mt-5 text-display-lg font-bold text-cloud">The progression.</h2>
         </Reveal>
 
-        <div className="mt-12 max-w-md">
+        <div className="mt-8 max-w-md">
           {journey.map((step, i) => {
             const isLast = i === journey.length - 1;
             return (

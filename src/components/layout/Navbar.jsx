@@ -2,14 +2,18 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks, profile } from '../../data/portfolio';
+
 import { cn } from '../../utils/cn';
 import { TbBrandGithub, TbBrandLinkedin, TbMail, TbMenu2, TbClose } from '../../utils/iconMap';
+// import { useState } from 'react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -118,22 +122,35 @@ export default function Navbar() {
           </ul>
 
           {/* Desktop actions */}
-          <div className="hidden items-center gap-1.5 md:flex">
-            <a href={profile.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex h-9 w-9 items-center justify-center rounded-lg text-cloud-300 transition-colors hover:text-cloud">
-              <TbBrandGithub size={18} />
-            </a>
-            <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-lg text-cloud-300 transition-colors hover:text-cloud">
-              <TbBrandLinkedin size={18} />
-            </a>
-            <a href={`mailto:${profile.socials.email}`} aria-label="Email" className="flex h-9 w-9 items-center justify-center rounded-lg text-cloud-300 transition-colors hover:text-cloud">
-              <TbMail size={18} />
-            </a>
+          <div className="hidden relative  items-center gap-1.5 md:block      ">
             <button
+            onMouseEnter={() => setIsOpen(!isOpen)}
+      // onMouseOut={() => setIsOpen(false)}
               onClick={() => handleNav('/#contact')}
-              className="ml-1.5 rounded-xl bg-accent-500 px-4 py-2 text-sm font-semibold text-white shadow-[0_2px_12px_-2px_rgba(139,124,255,0.4)] transition-all hover:bg-accent-400 hover:shadow-[0_4px_18px_-2px_rgba(139,124,255,0.5)] hover:-translate-y-0.5"
+              className=" ml-1.5 rounded-xl bg-accent-500 px-4 py-2 text-sm font-semibold text-white shadow-[0_2px_12px_-2px_rgba(139,124,255,0.4)] transition-all hover:bg-accent-400 hover:shadow-[0_4px_18px_-2px_rgba(139,124,255,0.5)] hover:-translate-y-0.5"
             >
               Hire Me
             </button>
+
+            <div className={`flex absolute top-14 gap-5 
+            transition-all duration-300 ${
+          isOpen 
+            ? 'opacity-100 pointer-events-auto scale-100' 
+            : 'opacity-0 pointer-events-none scale-95 hidden'
+        }`}>
+                <a href={profile.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="flex   items-center justify-center rounded-lg  text-cloud-300 transition-colors hover:text-cloud ">
+                <TbBrandGithub size={25} />
+              </a>
+              <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex   items-center justify-center rounded-lg text-cloud-300 transition-colors hover:text-cloud">
+                <TbBrandLinkedin size={25} />
+              </a>
+              <a href={`mailto:${profile.socials.email}`} aria-label="Email" className="flex   items-center justify-center rounded-lg text-cloud-300 transition-colors hover:text-cloud ">
+                <TbMail size={25} />
+              </a>
+            </div>
+            
+
+
           </div>
 
           {/* Mobile toggle */}
@@ -158,7 +175,7 @@ export default function Navbar() {
             transition={{ duration: 0.25 }}
             className="container-max section-px md:hidden"
           >
-            <div className="mt-2 rounded-2xl border border-cloud-200/8 bg-ink-900/95 p-4 backdrop-blur-xl">
+            <div className="mt-2 rounded-2xl  border border-cloud-200/8 bg-ink-900/95 p-4 backdrop-blur-xl">
               <ul className="flex flex-col gap-1">
                 {navLinks.map((link) => (
                   <li key={link.path}>

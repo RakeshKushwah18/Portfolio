@@ -16,7 +16,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 function PageLoader() {
   return (
-    <div className="flex min-h-[70vh] items-center justify-center">
+    <div className="flex min-h-[70vh]  items-center justify-center">
       <span className="h-10 w-10 animate-spin rounded-full border-2 border-cloud-200/10 border-t-accent-500" />
     </div>
   );

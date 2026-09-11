@@ -7,8 +7,8 @@ import { TbBrandGithub, TbExternalLink, TbArrowRight } from '../../utils/iconMap
 function ProjectCard({ project, className }) {
   const isLarge = project.size === 'large';
   return (
-    <Reveal className={className}>
-      <article className="group surface surface-hover flex h-full flex-col overflow-hidden rounded-3xl">
+    <Reveal  className={className}>
+      <article  className="group surface surface-hover flex h-full flex-col overflow-hidden rounded-3xl">
         {/* Image */}
         <div className={`relative overflow-hidden ${isLarge ? 'aspect-[16/9]' : 'aspect-[16/10]'}`}>
           <img
